@@ -1,0 +1,10 @@
+{
+  "vehicles": [],
+  "actual": 0,
+  "dialogs": {
+    "cleanDialog": false,
+    "cleanAllDialog": false,
+    "testDialog": false,
+    "uploadDialog": false
+  }
+}
