@@ -14,7 +14,7 @@ const HomeScreen = ({navigation}) => {
     <Background>
       <Logo />
 
-      <Header>CarPark Home</Header>
+      <Header>App Home</Header>
 
       <Button mode="contained" onPress={_onVolver}>
         Volver

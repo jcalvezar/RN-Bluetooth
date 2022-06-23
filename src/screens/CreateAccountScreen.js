@@ -15,7 +15,7 @@ const CreateAccountScreen = ({navigation}) => {
     <Background>
       <Logo />
 
-      <Header>CarPark Create</Header>
+      <Header>App Create</Header>
 
       <Button mode="contained" onPress={_onVolver}>
         Volver

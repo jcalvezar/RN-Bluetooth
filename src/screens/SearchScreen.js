@@ -14,7 +14,7 @@ const SearchScreen = ({navigation}) => {
     <Background>
       <Logo />
 
-      <Header>CarPark search</Header>
+      <Header>App search</Header>
 
       <Button mode="contained" onPress={_onVolver}>
         Volver

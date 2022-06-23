@@ -15,7 +15,7 @@ const ForgotPasswordScreen = ({navigation}) => {
     <Background>
       <Logo />
 
-      <Header>CarPark Forgot</Header>
+      <Header>App Forgot</Header>
 
       <Button mode="contained" onPress={_onVolver}>
         Volver

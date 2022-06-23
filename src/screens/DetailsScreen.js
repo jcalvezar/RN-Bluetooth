@@ -14,7 +14,7 @@ const DetailsScreen = ({navigation}) => {
     <Background>
       <Logo />
 
-      <Header>CarPark Detail</Header>
+      <Header>App Detail</Header>
 
       <Button mode="contained" onPress={_onVolver}>
         Volver

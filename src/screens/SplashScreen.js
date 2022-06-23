@@ -7,7 +7,7 @@ const SplashScreen = ({navigation}) => {
   return (
     <Background>
       <Logo />
-      <Header>CarPark splash</Header>
+      <Header>App splash</Header>
     </Background>
   );
 };

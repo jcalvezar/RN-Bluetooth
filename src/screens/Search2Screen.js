@@ -14,7 +14,7 @@ const Search2Screen = ({navigation}) => {
     <Background>
       <Logo />
 
-      <Header>CarPark Search 2</Header>
+      <Header>App Search 2</Header>
 
       <Button mode="contained" onPress={_onVolver}>
         Volver

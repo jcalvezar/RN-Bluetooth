@@ -37,7 +37,7 @@ const LoginScreen = ({navigation}) => {
     <Background>
       <Logo />
 
-      <Header>CarPark</Header>
+      <Header>App</Header>
 
       <TextInput
         label="Email"
