@@ -8,6 +8,7 @@ import Button from '../components/Button';
 const DetailsScreen = ({navigation}) => {
   const _onVolver = () => {
     console.log('Volver');
+    navigation.goBack();
   };
 
   return (
@@ -17,7 +18,7 @@ const DetailsScreen = ({navigation}) => {
       <Header>App Detail</Header>
 
       <Button mode="contained" onPress={_onVolver}>
-        Volver
+        Back
       </Button>
     </Background>
   );

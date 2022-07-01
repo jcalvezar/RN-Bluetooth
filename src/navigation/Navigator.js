@@ -3,6 +3,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
 
 import {IconButton, Colors} from 'react-native-paper';
 
@@ -17,6 +22,7 @@ import SearchScreen from '../screens/SearchScreen';
 import Search2Screen from '../screens/Search2Screen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SplashScreen from '../screens/SplashScreen';
+import OtherScreen from '../screens/OtherScreen';
 
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
@@ -56,7 +62,7 @@ const HomeStackScreen = () => (
       name="DetailsScreen"
       component={DetailsScreen}
       options={({route}) => ({
-        title: route.params.name,
+        title: 'Details',
         headerShown: false,
       })}
     />
@@ -95,35 +101,95 @@ const ProfileStackScreen = () => (
   </ProfileStack.Navigator>
 );
 
-const TabsScreen = () => (
-  <Tabs.Navigator>
-    <Tabs.Screen
-      name="Home"
-      component={HomeStackScreen}
-      options={{
-        headerShown: false,
-        tabBarIcon: ({color, size}) => (
-          <IconButton icon="home" color={color} size={size} />
-        ),
-      }}
-    />
-    <Tabs.Screen
-      name="Search"
-      component={SearchStackScreen}
-      options={{
-        headerShown: false,
-        tabBarIcon: ({color, size}) => (
-          <IconButton icon="magnify" color={color} size={size} />
-        ),
-      }}
-    />
-  </Tabs.Navigator>
-);
+const TabsScreen = props => {
+  console.log('TabsScreen: ', props);
+  const {navigation} = props;
+
+  return (
+    <Tabs.Navigator>
+      <Tabs.Screen
+        name="Home"
+        component={HomeStackScreen}
+        options={{
+          headerShown: true,
+          tabBarIcon: ({color, size}) => (
+            <IconButton icon="home" color={color} size={size} />
+          ),
+          headerLeft: props => {
+            console.log('HeaderLeft props: ', props);
+            return (
+              <IconButton
+                icon="menu"
+                size={props.size}
+                onPress={() => navigation.openDrawer()}
+              />
+            );
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="Search"
+        component={SearchStackScreen}
+        options={{
+          headerShown: true,
+          tabBarIcon: ({color, size}) => (
+            <IconButton icon="magnify" color={color} size={size} />
+          ),
+          headerLeft: props => {
+            console.log('HeaderLeft props: ', props);
+            return (
+              <IconButton
+                icon="menu"
+                size={props.size}
+                onPress={() => navigation.openDrawer()}
+              />
+            );
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="JCA1"
+        component={OtherScreen}
+        options={{
+          tabBarButton: () => null,
+          tabBarVisible: false, // if you don't want to see the tab bar
+          headerShown: true,
+          tabBarIcon: ({color, size}) => (
+            <IconButton icon="magnify" color={color} size={size} />
+          ),
+          headerLeft: props => {
+            console.log('HeaderLeft props: ', props);
+            return (
+              <IconButton
+                icon="menu"
+                size={props.size}
+                onPress={() => navigation.openDrawer()}
+              />
+            );
+          },
+        }}
+      />
+    </Tabs.Navigator>
+  );
+};
+
+const CustomDrawerContent = props => {
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+      <DrawerItem label="Help" onPress={() => console.log('Help')} />
+    </DrawerContentScrollView>
+  );
+};
 
 const Drawer = createDrawerNavigator();
 const DrawerScreen = () => (
-  <Drawer.Navigator initialRouteName="Main">
-    <Drawer.Screen name="Main" component={TabsScreen} />
+  <Drawer.Navigator initialRouteName="Main" drawerContent={CustomDrawerContent}>
+    <Drawer.Screen
+      name="Main"
+      component={TabsScreen}
+      options={{headerShown: false}}
+    />
     <Drawer.Screen name="Profile" component={ProfileStackScreen} />
   </Drawer.Navigator>
 );

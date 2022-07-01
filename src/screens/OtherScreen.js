@@ -3,23 +3,13 @@ import {StyleSheet} from 'react-native';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
-import Button from '../components/Button';
 
-const HomeScreen = ({navigation}) => {
-  const _onDetalle = () => {
-    console.log('Volver');
-    navigation.navigate('DetailsScreen');
-  };
-
+const OtherScreen = ({navigation}) => {
   return (
     <Background>
       <Logo />
 
-      <Header>App Home</Header>
-
-      <Button mode="contained" onPress={_onDetalle}>
-        Detail &gt;
-      </Button>
+      <Header>Other Screen</Header>
     </Background>
   );
 };
@@ -31,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default OtherScreen;

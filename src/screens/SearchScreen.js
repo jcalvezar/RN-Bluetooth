@@ -7,7 +7,8 @@ import Button from '../components/Button';
 
 const SearchScreen = ({navigation}) => {
   const _onVolver = () => {
-    console.log('Volver');
+    console.log('Search');
+    navigation.navigate('Search2Screen');
   };
 
   return (
@@ -17,7 +18,7 @@ const SearchScreen = ({navigation}) => {
       <Header>App search</Header>
 
       <Button mode="contained" onPress={_onVolver}>
-        Volver
+        Do Search &gt;
       </Button>
     </Background>
   );
