@@ -148,7 +148,7 @@ const TabsScreen = props => {
         }}
       />
       <Tabs.Screen
-        name="JCA1"
+        name="Other"
         component={OtherScreen}
         options={{
           tabBarButton: () => null,
@@ -176,8 +176,23 @@ const TabsScreen = props => {
 const CustomDrawerContent = props => {
   return (
     <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem label="Help" onPress={() => console.log('Help')} />
+      {/* <DrawerItemList {...props} /> */}
+      <DrawerItem
+        label="Home"
+        onPress={() => props.navigation.navigate('Main', {screen: 'Home'})}
+      />
+      <DrawerItem
+        label="Search"
+        onPress={() => props.navigation.navigate('Main', {screen: 'Search'})}
+      />
+      <DrawerItem
+        label="Other"
+        onPress={() => props.navigation.navigate('Other')}
+      />
+      <DrawerItem
+        label="Profile"
+        onPress={() => props.navigation.navigate('Profile')}
+      />
     </DrawerContentScrollView>
   );
 };
