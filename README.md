@@ -1,19 +1,19 @@
-# React Native Base
+# React Native Base with Bluetooth
 
-A React Native base App with Navigation and Redux
+A React Native base App with Navigation, Redux & Bluetooth
 
 ## Starting 🚀
 
 To clone the repo:
 
 ```
-git clone https://github.com/jcalvezar/react-native-base
+git clone https://github.com/jcalvezar/RN-Bluetooth
 ```
 
 It will create a folder :
 
 ```
-cd react-native-base
+cd RN-Bluetooth
 ```
 
 Then, install the packages:
@@ -52,6 +52,7 @@ sudo apt-get install node
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk) - Para meter funciones en los Action Creators (para llamadas a API por ej)
 - [NodeJS](https://nodejs.org/) - El Interprete Javascript
 - [NPM](https://www.npmjs.com/) - El Manejador de dependencias
+- [BLE Manager](https://github.com/innoveit/react-native-ble-manager) - La Libreria Bluetooth
 
 ## Author ✒️
 
