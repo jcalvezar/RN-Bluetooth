@@ -13,12 +13,22 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <Background>
-      <Logo />
-
-      <Header>App Home</Header>
+      <Header>BT Home</Header>
 
       <Button mode="contained" onPress={_onDetalle}>
-        Detail &gt;
+        Scan
+      </Button>
+
+      <Button mode="contained" onPress={_onDetalle}>
+        Connect & Write
+      </Button>
+
+      <Button mode="contained" onPress={_onDetalle}>
+        Disconnect
+      </Button>
+
+      <Button mode="contained" onPress={_onDetalle}>
+        Log &gt;
       </Button>
     </Background>
   );

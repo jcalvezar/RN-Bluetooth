@@ -13,12 +13,10 @@ const DetailsScreen = ({navigation}) => {
 
   return (
     <Background>
-      <Logo />
-
-      <Header>App Detail</Header>
+      <Header>BT Log</Header>
 
       <Button mode="contained" onPress={_onVolver}>
-        Back
+        Back to BT Home
       </Button>
     </Background>
   );

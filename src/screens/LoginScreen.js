@@ -37,7 +37,7 @@ const LoginScreen = ({navigation}) => {
     <Background>
       <Logo />
 
-      <Header>App</Header>
+      <Header>Base with Bluetooth</Header>
 
       <TextInput
         label="Email"
