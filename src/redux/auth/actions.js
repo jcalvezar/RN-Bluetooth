@@ -21,7 +21,7 @@ const storeData = async userInfo => {
 
 export const tryLogin = (userInfo, callback) => async dispatch => {
   try {
-    const url = `http://jcalvez.info/apps/carpark/login/`;
+    const url = `http://jcalvez.info/apps/rnbase/login/`;
     const envio = {
       username: userInfo.email,
       password: userInfo.password,
